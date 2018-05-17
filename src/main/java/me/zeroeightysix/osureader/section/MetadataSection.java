@@ -1,7 +1,5 @@
 package me.zeroeightysix.osureader.section;
 
-import java.util.List;
-
 /**
  * Created by 086 on 16/05/2018.
  */
@@ -10,11 +8,11 @@ public class MetadataSection extends Section {
     @Source("Title") private String title;
     @Source("TitleUnicode") private String titleUnicode;
     @Source("Artist") private String artist;
-    @Source("AristUnicode") private String artistUnicode;
+    @Source("ArtistUnicode") private String artistUnicode;
     @Source("Creator") private String creator;
     @Source("Version") private String version;
     @Source("Source") private String source;
-    @Source("Tags") private List tags;
+    @Source("Tags") private String tags;
     @Source("BeatmapID") private int beatmapID;
     @Source("BeatmapSetID") private int beatmapSetID;
 
@@ -26,7 +24,7 @@ public class MetadataSection extends Section {
         return artist;
     }
 
-    public List getTags() {
+    public String getTags() {
         return tags;
     }
 
