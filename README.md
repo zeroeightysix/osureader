@@ -1,6 +1,38 @@
 # osureader
 A small java library for parsing the osu beatmap file format (.osu)
 
+Please reference [this wiki page](https://osu.ppy.sh/help/wiki/osu!_File_Formats/Osu_(file_format)) for more information on the osu file format.
+
+## Getting it
+
+If you're using gradle:
+```gradle
+repositories {
+    ...
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    ...
+    implementation 'com.github.zeroeightysix:osureader:-SNAPSHOT'
+}
+```
+With maven:
+```xml
+<repositories>
+  <repository>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+  </repository>
+</repositories>
+
+<dependency>
+  <groupId>com.github.zeroeightysix</groupId>
+  <artifactId>osureader</artifactId>
+  <version>-SNAPSHOT</version>
+</dependency>
+```
+
 ## Usage:
 To parse a file: 
 ```java
