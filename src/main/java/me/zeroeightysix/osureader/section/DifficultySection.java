@@ -9,6 +9,8 @@ public class DifficultySection extends Section {
     @Source("CircleSize") private int circleSize;
     @Source("OverallDifficulty") private int overallDifficulty;
     @Source("ApproachRate") private int approachRate;
+    @Source("SliderMultiplier") private double sliderMultiplier;
+    @Source("SliderTickRate") private double sliderTickRate;
 
     public DifficultySection(OsuSection source) throws IllegalAccessException {
         super(source);
@@ -20,6 +22,14 @@ public class DifficultySection extends Section {
 
     public int getCircleSize() {
         return circleSize;
+    }
+
+    public double getSliderMultiplier() {
+        return sliderMultiplier;
+    }
+
+    public double getSliderTickRate() {
+        return sliderTickRate;
     }
 
     /**
