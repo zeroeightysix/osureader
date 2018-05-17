@@ -17,7 +17,6 @@ public class HitObjectsSection {
 
     public HitObjectsSection(OsuSection section) {
         for (OsuNode node : section.getEntries()) {
-            System.out.println(node);
             if (node instanceof OsuPrimitiveNode) {
                 Object v = node.getValue();
                 if (v instanceof List) {

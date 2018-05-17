@@ -43,8 +43,20 @@ public class GeneralSection extends Section {
         return audioFilename;
     }
 
+    public boolean isCountdown() {
+        return countdown;
+    }
+
+    public boolean isLetterboxInBreaks() {
+        return letterboxInBreaks;
+    }
+
+    public boolean isWidescreenStoryboard() {
+        return widescreenStoryboard;
+    }
+
     public static enum SampleSet {
-        AUTO, NORMAL, SOFT, DRUM;
+        NONE, AUTO, NORMAL, SOFT, DRUM;
 
         private static final SampleSet[] set = values();
         public static SampleSet byOrdinal(int ordinal) {

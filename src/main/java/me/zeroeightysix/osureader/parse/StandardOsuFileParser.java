@@ -45,10 +45,10 @@ public class StandardOsuFileParser implements OsuFileParser {
         if (COMMENT_PATTERN.matcher(line).matches()) return new OsuComment(line.substring(2));
 
         Matcher entryMatcher = ENTRY_PATTERN.matcher(trimmed);
-        if (entryMatcher.matches() && trimmed.split(":").length==2) {
+        if (entryMatcher.matches() && trimmed.split(":", -1).length==2) {
             int splitchar = trimmed.indexOf(':');
             String key = trimmed.substring(0,splitchar).trim();
-            String value = trimmed.substring(splitchar+1);
+            String value = trimmed.substring(splitchar+1).trim();
             try {
                 return new OsuNumberNode(key, Double.parseDouble(value.trim()));
             }catch (NumberFormatException e) {
@@ -62,7 +62,11 @@ public class StandardOsuFileParser implements OsuFileParser {
                 if (o.size() == 3 && o.stream().allMatch(o1 -> o1 instanceof Number)) {
                     return new OsuColourNode(key, new OsuReader.Colour(((Double) o.get(0)).intValue(),((Double) o.get(1)).intValue(),((Double) o.get(2)).intValue()));
                 }
-                return new OsuListNode(key, o);
+                if (o.size() == 1) {
+                    return new OsuStringNode(key, value);
+                }else{
+                    return new OsuListNode(key, o);
+                }
             }
         }
 
