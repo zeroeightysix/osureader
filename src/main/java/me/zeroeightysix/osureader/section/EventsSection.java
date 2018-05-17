@@ -26,8 +26,14 @@ public class EventsSection {
                             }catch (Exception ignored){} // invalid formatting
                             break;
                         case 5: // Background and video effects
-                            this.backgroundFile = list.get(2).toString();
-                            break;
+                            int first = ((Number) list.get(0)).intValue();
+                            int second = ((Number) list.get(1)).intValue();
+                            int fourth = ((Number) list.get(3)).intValue();
+                            int fifth = ((Number) list.get(4)).intValue();
+                            if (first == 0 && second == 0 && fourth == 0 && fifth == 0) {
+                                this.backgroundFile = (String) list.get(2);
+                                break;
+                            }
                     }
                 }
             }
